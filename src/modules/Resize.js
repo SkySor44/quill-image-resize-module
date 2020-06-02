@@ -90,6 +90,7 @@ export class Resize extends BaseModule {
 		if (this.dragBox === this.boxes[0] || this.dragBox === this.boxes[3]) {
 			// left-side resize handler; dragging right shrinks image
 			this.img.width = Math.round(this.preDragWidth - deltaX);
+			this.img.style.width = Math.round(this.preDragWidth - deltaX);
 			if (
 				this.img.firstChild &&
 				this.img.firstChild.tagName.toUpperCase() === "IMG"
@@ -114,6 +115,7 @@ export class Resize extends BaseModule {
 		} else {
 			// right-side resize handler; dragging right enlarges image
 			this.img.width = Math.round(this.preDragWidth + deltaX);
+			this.img.style.width = Math.round(this.preDragWidth + deltaX);
 			if (
 				this.img.firstChild &&
 				this.img.firstChild.tagName.toUpperCase() === "IMG"
