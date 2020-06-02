@@ -85,12 +85,12 @@ export class Toolbar extends BaseModule {
 
 				if (idx === 0) {
 					this.img.style.display = "inline-block";
-					this.img.style.float =
-						this.img.style.float === "left" ? undefined : "left";
 					this.img.style.margin =
 						this.img.style.float === "left"
 							? "0px"
 							: "5px 5px 5px 0px";
+					this.img.style.float =
+						this.img.style.float === "left" ? undefined : "left";
 				} else if (idx === 1) {
 					this.img.style.float = undefined;
 					this.img.style.margin =
@@ -105,12 +105,12 @@ export class Toolbar extends BaseModule {
 					}
 				} else {
 					this.img.style.display = "inline-block";
-					this.img.style.float =
-						this.img.style.float === "right" ? undefined : "right";
 					this.img.style.margin =
 						this.img.style.float === "right"
 							? "0px"
 							: "5px 0px 5px 5px";
+					this.img.style.float =
+						this.img.style.float === "right" ? undefined : "right";
 				}
 				// image may change position; redraw drag handles
 				this.requestUpdate();
