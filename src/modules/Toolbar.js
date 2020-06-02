@@ -67,6 +67,7 @@ export class Toolbar extends BaseModule {
 			button.addEventListener("click", () => {
 				// deselect all buttons
 				buttons.forEach((button) => (button.style.filter = ""));
+				console.log("1", alignment.isApplied());
 				if (alignment.isApplied()) {
 					// If applied, unapply
 					FloatStyle.remove(this.img);
