@@ -84,21 +84,33 @@ export class Toolbar extends BaseModule {
 				}
 
 				if (idx === 0) {
-					this.img.style.display = "inline";
-					this.img.style.float = "left";
-					this.img.style.margin = "0 1em 1em 0";
+					this.img.style.display =
+						this.img.style.float === "left"
+							? "inline-block"
+							: "inline";
+					this.img.style.float =
+						this.img.style.float === "left" ? undefined : "left";
+					this.img.style.margin =
+						this.img.style.float === "left" ? "0px" : "0 1em 1em 0";
 				} else if (idx === 1) {
-					if (this.img.tagName.toUpperCase() === "FIGURE") {
-						this.img.style.display = "inline-block";
-					} else {
-						this.img.style.display = "block";
-					}
+					this.img.style.display =
+						this.img.style.display === "block"
+							? "inline-block"
+							: "block";
 					this.img.style.float = undefined;
-					this.img.style.margin = "auto";
+					this.img.style.margin =
+						this.img.style.display === "block" ? "0px" : "auto";
 				} else {
-					this.img.style.display = "inline";
-					this.img.style.float = "right";
-					this.img.style.margin = "0 1em 1em 0";
+					this.img.style.display =
+						this.img.style.float === "right"
+							? "inline-block"
+							: "inline";
+					this.img.style.float =
+						this.img.style.float === "right" ? undefined : "right";
+					this.img.style.margin =
+						this.img.style.float === "right"
+							? "0px"
+							: "0 1em 1em 0";
 				}
 				// image may change position; redraw drag handles
 				this.requestUpdate();
