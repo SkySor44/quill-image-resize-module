@@ -49,6 +49,10 @@ export class Toolbar extends BaseModule {
 			{
 				icon: IconAlignRight,
 				apply: () => {
+					console.log(
+						"Display Add",
+						DisplayStyle.add(this.img, "inline")
+					);
 					DisplayStyle.add(this.img, "inline");
 					FloatStyle.add(this.img, "right");
 					MarginStyle.add(this.img, "0 0 1em 1em");
