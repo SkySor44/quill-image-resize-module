@@ -88,7 +88,11 @@ export class Toolbar extends BaseModule {
 					this.img.style.float = "left";
 					this.img.style.margin = "0 1em 1em 0";
 				} else if (idx === 1) {
-					this.img.style.display = "block";
+					if (this.img.tagName.toUpperCase() === "FIGURE") {
+						this.img.style.display = "inline-block";
+					} else {
+						this.img.style.display = "block";
+					}
 					this.img.style.float = undefined;
 					this.img.style.margin = "auto";
 				} else {
