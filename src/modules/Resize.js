@@ -92,15 +92,25 @@ export class Resize extends BaseModule {
 			this.img.width = Math.round(this.preDragWidth - deltaX);
 			if (this.img.firstChild.tagName.toUpperCase() === "IMG") {
 				this.img.firstChild.width = Math.round(
-					this.preDragWidth + deltaX
+					this.preDragWidth - deltaX
+				);
+			}
+
+			if (this.img.lastChild.tagName.toUpperCase() === "FIGCAPTION") {
+				this.img.lastChild.width = Math.round(
+					this.preDragWidth - deltaX
 				);
 			}
 		} else {
 			// right-side resize handler; dragging right enlarges image
 			this.img.width = Math.round(this.preDragWidth + deltaX);
 			if (this.img.firstChild.tagName.toUpperCase() === "IMG") {
-				console.log("here!");
 				this.img.firstChild.width = Math.round(
+					this.preDragWidth + deltaX
+				);
+			}
+			if (this.img.lastChild.tagName.toUpperCase() === "FIGCAPTION") {
+				this.img.lastChild.width = Math.round(
 					this.preDragWidth + deltaX
 				);
 			}
