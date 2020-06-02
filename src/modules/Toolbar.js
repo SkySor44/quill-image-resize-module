@@ -98,6 +98,10 @@ export class Toolbar extends BaseModule {
 					this.img.style.margin =
 						this.img.style.display === "block" ? "0px" : "auto";
 					if (this.img.tagName.toUpperCase() === "FIGURE") {
+						console.log(
+							"Made it!",
+							this.img.firstChild.style.width
+						);
 						this.img.style.width = this.img.firstChild.style.width;
 					}
 				} else {
