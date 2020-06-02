@@ -1,6 +1,5 @@
 export class BaseModule {
 	constructor(resizer) {
-		console.log("resizer", resizer);
 		this.overlay = resizer.overlay;
 		this.img = resizer.img;
 		this.options = resizer.options;

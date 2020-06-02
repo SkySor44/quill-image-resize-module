@@ -49,10 +49,6 @@ export class Toolbar extends BaseModule {
 			{
 				icon: IconAlignRight,
 				apply: () => {
-					console.log(
-						"Display Add",
-						DisplayStyle.add(this.img, "inline")
-					);
 					DisplayStyle.add(this.img, "inline");
 					FloatStyle.add(this.img, "right");
 					MarginStyle.add(this.img, "0 0 1em 1em");
@@ -71,7 +67,6 @@ export class Toolbar extends BaseModule {
 			button.addEventListener("click", () => {
 				// deselect all buttons
 				buttons.forEach((button) => (button.style.filter = ""));
-				console.log("1", alignment.isApplied());
 				if (alignment.isApplied()) {
 					// If applied, unapply
 					FloatStyle.remove(this.img);
@@ -85,32 +80,19 @@ export class Toolbar extends BaseModule {
 
 				if (idx === 0) {
 					this.img.style.display = "inline-block";
-					this.img.style.margin =
-						this.img.style.float === "left"
-							? "0px"
-							: "5px 8px 5px 0px";
-					this.img.style.float =
-						this.img.style.float === "left" ? undefined : "left";
+					this.img.style.margin = "5px 8px 5px 0px";
+					this.img.style.float = "left";
 				} else if (idx === 1) {
 					this.img.style.float = undefined;
-					this.img.style.margin =
-						this.img.style.display === "block" ? "0px" : "5px auto";
-					this.img.style.display =
-						this.img.style.display === "block"
-							? "inline-block"
-							: "block";
+					this.img.style.margin = "5px auto";
+					this.img.style.display = "block";
 					if (this.img.tagName.toUpperCase() === "FIGURE") {
-						console.log("Made it!", this.img.firstChild.width);
 						this.img.style.width = this.img.firstChild.width + "px";
 					}
 				} else {
 					this.img.style.display = "inline-block";
-					this.img.style.margin =
-						this.img.style.float === "right"
-							? "0px"
-							: "5px 0px 5px 8px";
-					this.img.style.float =
-						this.img.style.float === "right" ? undefined : "right";
+					this.img.style.margin = "5px 0px 5px 8px";
+					this.img.style.float = "right";
 				}
 				// image may change position; redraw drag handles
 				this.requestUpdate();
