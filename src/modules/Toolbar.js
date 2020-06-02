@@ -27,7 +27,6 @@ export class Toolbar extends BaseModule {
 	onUpdate = () => {};
 
 	_defineAlignments = () => {
-		console.log("img in alignments", this.img);
 		this.alignments = [
 			{
 				icon: IconAlignLeft,
@@ -79,7 +78,8 @@ export class Toolbar extends BaseModule {
 					alignment.apply();
 				}
 
-				console.log("clicked", alignment);
+				console.log("clicked", alignment.isApplied());
+				console.log("img in alignments", this.img);
 				// image may change position; redraw drag handles
 				this.requestUpdate();
 			});
