@@ -35,7 +35,7 @@ export default class ImageResize {
 		document.execCommand("enableObjectResizing", false, "false");
 
 		// respond to clicks inside the editor
-		this.quill.root.addEventListener("click", this.handleClick, false);
+		this.quill.root.addEventListener("click", this.handleNewClick, false);
 
 		this.quill.root.parentNode.style.position =
 			this.quill.root.parentNode.style.position || "relative";
@@ -76,7 +76,7 @@ export default class ImageResize {
 		this.modules = [];
 	};
 
-	handleClick = (evt) => {
+	handleNewClick = (evt) => {
 		if (
 			(evt.target &&
 				evt.target.tagName &&
