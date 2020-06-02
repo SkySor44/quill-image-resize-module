@@ -90,11 +90,19 @@ export class Resize extends BaseModule {
 		if (this.dragBox === this.boxes[0] || this.dragBox === this.boxes[3]) {
 			// left-side resize handler; dragging right shrinks image
 			this.img.width = Math.round(this.preDragWidth - deltaX);
-			console.log("1", this.img);
+			if (this.img.firstChild.tagName === "img") {
+				this.img.firstChild.width = Math.round(
+					this.preDragWidth + deltaX
+				);
+			}
 		} else {
 			// right-side resize handler; dragging right enlarges image
 			this.img.width = Math.round(this.preDragWidth + deltaX);
-			console.log("2", this.img);
+			if (this.img.firstChild.tagName === "img") {
+				this.img.firstChild.width = Math.round(
+					this.preDragWidth + deltaX
+				);
+			}
 		}
 		this.requestUpdate();
 	};
