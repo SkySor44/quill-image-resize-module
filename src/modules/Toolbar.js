@@ -88,11 +88,13 @@ export class Toolbar extends BaseModule {
 					this.img.style.float =
 						this.img.style.float === "left" ? undefined : "left";
 					this.img.style.margin =
-						this.img.style.float === "left" ? "0px" : "0 1em 1em 0";
+						this.img.style.float === "left"
+							? "0px"
+							: "5px 5px 5px 0px";
 				} else if (idx === 1) {
 					this.img.style.float = undefined;
 					this.img.style.margin =
-						this.img.style.display === "block" ? "0px" : "auto";
+						this.img.style.display === "block" ? "0px" : "5px auto";
 					this.img.style.display =
 						this.img.style.display === "block"
 							? "inline-block"
@@ -108,7 +110,7 @@ export class Toolbar extends BaseModule {
 					this.img.style.margin =
 						this.img.style.float === "right"
 							? "0px"
-							: "0 1em 1em 0";
+							: "5px 0px 5px 5px";
 				}
 				// image may change position; redraw drag handles
 				this.requestUpdate();
