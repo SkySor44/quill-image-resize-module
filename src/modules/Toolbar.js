@@ -90,13 +90,13 @@ export class Toolbar extends BaseModule {
 					this.img.style.margin =
 						this.img.style.float === "left" ? "0px" : "0 1em 1em 0";
 				} else if (idx === 1) {
+					this.img.style.float = undefined;
+					this.img.style.margin =
+						this.img.style.display === "block" ? "0px" : "auto";
 					this.img.style.display =
 						this.img.style.display === "block"
 							? "inline-block"
 							: "block";
-					this.img.style.float = undefined;
-					this.img.style.margin =
-						this.img.style.display === "block" ? "0px" : "auto";
 					if (this.img.tagName.toUpperCase() === "FIGURE") {
 						console.log("Made it!", this.img.firstChild.width);
 						this.img.style.width = this.img.firstChild.width + "px";
