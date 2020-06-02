@@ -170,7 +170,6 @@ export default class ImageResize {
 		const parent = this.quill.root.parentNode;
 		const imgRect = this.img.getBoundingClientRect();
 		const containerRect = parent.getBoundingClientRect();
-		console.log("imgRect", imgRect);
 
 		Object.assign(this.overlay.style, {
 			left: `${
