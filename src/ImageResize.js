@@ -95,9 +95,9 @@ export default class ImageResize {
 			}
 
 			if (evt.target.parentNode.tagName.toUpperCase() === "FIGURE") {
-				evt.target.parentNode.style.width = evt.target.style.width;
+				evt.target.parentNode.style.width =
+					evt.target.style.width + "px";
 				evt.target.parentNode.width = evt.target.width;
-				evt.target.parentNode.style.height = evt.target.style.height;
 				evt.target.parentNode.height = evt.target.height;
 				evt.target.parentNode.naturalWidth = evt.target.naturalWidth;
 				evt.target.parentNode.naturalHeight = evt.target.naturalHeight;

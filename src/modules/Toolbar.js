@@ -88,7 +88,7 @@ export class Toolbar extends BaseModule {
 					this.img.style.margin =
 						this.img.style.float === "left"
 							? "0px"
-							: "5px 5px 5px 0px";
+							: "5px 8px 5px 0px";
 					this.img.style.float =
 						this.img.style.float === "left" ? undefined : "left";
 				} else if (idx === 1) {
@@ -108,7 +108,7 @@ export class Toolbar extends BaseModule {
 					this.img.style.margin =
 						this.img.style.float === "right"
 							? "0px"
-							: "5px 0px 5px 5px";
+							: "5px 0px 5px 8px";
 					this.img.style.float =
 						this.img.style.float === "right" ? undefined : "right";
 				}
