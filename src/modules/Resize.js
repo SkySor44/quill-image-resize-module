@@ -94,12 +94,16 @@ export class Resize extends BaseModule {
 				this.img.firstChild.width = Math.round(
 					this.preDragWidth - deltaX
 				);
+				this.img.firstChild.style.width =
+					Math.round(this.preDragWidth - deltaX) + "px";
 			}
 
 			if (this.img.lastChild.tagName.toUpperCase() === "FIGCAPTION") {
 				this.img.lastChild.width = Math.round(
 					this.preDragWidth - deltaX
 				);
+				this.img.lastChild.style.width =
+					Math.round(this.preDragWidth - deltaX) + "px";
 			}
 		} else {
 			// right-side resize handler; dragging right enlarges image
@@ -108,11 +112,15 @@ export class Resize extends BaseModule {
 				this.img.firstChild.width = Math.round(
 					this.preDragWidth + deltaX
 				);
+				this.img.firstChild.style.width =
+					Math.round(this.preDragWidth + deltaX) + "px";
 			}
 			if (this.img.lastChild.tagName.toUpperCase() === "FIGCAPTION") {
 				this.img.lastChild.width = Math.round(
 					this.preDragWidth + deltaX
 				);
+				this.img.lastChild.style.width =
+					Math.round(this.preDragWidth + deltaX) + "px";
 			}
 		}
 		this.requestUpdate();
